@@ -5,7 +5,7 @@
   "description": "Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 'k', upvote/downvote with 'u'/'d', and more.",
   "homepage_url": "https://gitlab.com/abhayvashokan/vimmit",
   "host_permissions": [
-    "*://*.reddit.com/*"
+    "*://www.reddit.com/*"
   ],
   "content_scripts": [
     {
