@@ -13,23 +13,16 @@
         "*://*.reddit.com/*"
       ],
       "js": [
-        "src/index.js"
+        "src/content/index.js"
       ],
       "css": [
-        "src/styles.css"
+        "src/content/styles.css"
       ]
     }
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "abhayvashokan@gmail.com",
-      "data_collection_permissions": {
-        "required": [
-          "websiteContent",
-          "websiteActivity"
-        ],
-        "optional": []
-      }
+      "id": "abhayvashokan@gmail.com"
     }
   },
   "icons": {
