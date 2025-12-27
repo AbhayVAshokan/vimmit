@@ -30,7 +30,7 @@
     "96": "icons/border-96.png"
   },
   "action": {
-    "default_popup": "src/popup/popup.html",
+    "default_popup": "src/popup/index.html",
     "default_title": "Vimmit Keybindings"
   }
 }
