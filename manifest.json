@@ -13,7 +13,7 @@
         "*://*.reddit.com/*"
       ],
       "js": [
-        "src/content/index.js"
+        "dist/index.js"
       ],
       "css": [
         "src/content/styles.css"

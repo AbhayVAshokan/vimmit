@@ -1,0 +1,11 @@
+{
+  "name": "vimmit",
+  "module": "./src/content/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "bun build ./src/content/index.js --outdir ./dist --target browser"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
