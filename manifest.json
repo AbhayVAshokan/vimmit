@@ -27,6 +27,10 @@
   },
   "icons": {
     "48": "icons/border-48.png TODO: update this icon",
-    "96": "icons/border-96.png TODO: update this icon"
+    "96": "icons/border-96.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Vimmit Keybindings"
   }
 }
