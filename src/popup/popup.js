@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     k: "Previous Post/Comment",
     u: "Upvote",
     d: "Downvote",
+    c: "Add a comment",
+    Enter: "Select/Open Post",
+    n: "New Post",
     h: "Go to Home",
     p: "Go to Popular",
-    n: "New Post",
-    Enter: "Select/Open Post",
   };
 
   for (const key in keybindings) {

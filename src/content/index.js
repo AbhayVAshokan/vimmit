@@ -9,6 +9,36 @@ const isVisible = (element) => {
   );
 };
 
+const disableKeybindings = () => {
+  const activeElement = document.activeElement;
+
+  if (!activeElement) return false;
+
+  // workaround: disable keybindings in settings
+  if (window.location.href.includes("/settings")) {
+    return true;
+  }
+
+  // workaround for messages tab
+  if (activeElement.parentElement.tagName.toLowerCase() === "shreddit-app") {
+    return true;
+  }
+
+  if (activeElement.contentEditable) return true;
+
+  const tagName = activeElement.tagName.toLowerCase();
+  return [
+    "input",
+    "textarea",
+    "select",
+    "shreddit-composer", // comments input
+    "faceplate-text-input", // comments input
+    "reddit-search-large", // search bar
+    "shreddit-slotter", // add communities form
+    "custom-feed-details-form", // create custom feed form
+  ].includes(tagName);
+};
+
 const focusElement = (element) => {
   if (!element) return;
 
@@ -56,9 +86,12 @@ const focusFirstVisibleElement = (posts) => {
   for (const post of posts) {
     if (isVisible(post)) {
       focusElement(post);
-      break;
+      return post;
     }
   }
+
+  focusElement(posts[0]);
+  return posts[0];
 };
 
 const gotoNextPostOrComment = () => {
@@ -126,6 +159,24 @@ const handleDownvote = () => {
   }
 };
 
+const selectPost = () => {
+  const activeElement = getActiveElement();
+  if (!activeElement) return;
+
+  activeElement.querySelector("a").click();
+};
+
+const addComment = () => {
+  const activeElement = getActiveElement() || focusFirstVisibleElement();
+
+  if (activeElement.tagName === "SHREDDIT-COMMENT") {
+    const commentBtn = activeElement.querySelector(
+      "shreddit-comment-action-row faceplate-tracker button",
+    );
+    commentBtn?.click();
+  }
+};
+
 const gotoHome = () => {
   window.location.href = "/?feed=home";
 };
@@ -138,35 +189,20 @@ const gotoNewPost = () => {
   window.location.href = "/submit";
 };
 
-const selectPost = () => {
-  const activeElement = getActiveElement();
-  if (!activeElement) return;
-
-  activeElement.querySelector("a").click();
-};
-
 const KEYBINDINGS = {
   j: gotoNextPostOrComment,
   k: gotoPrevPostOrComment,
   u: handleUpvote,
   d: handleDownvote,
+  c: addComment,
+  Enter: selectPost,
+  n: gotoNewPost,
   h: gotoHome,
   p: gotoPopularTab,
-  n: gotoNewPost,
-  Enter: selectPost,
 };
 
 const keybindingsListener = (event) => {
-  const activeElement = document.activeElement;
-  const isTyping =
-    activeElement &&
-    (activeElement.tagName === "INPUT" ||
-      activeElement.tagName === "TEXTAREA" ||
-      activeElement.contentEditable === "true");
-
-  if (isTyping) {
-    return;
-  }
+  if (disableKeybindings()) return;
 
   try {
     const handler = KEYBINDINGS[event.key];
