@@ -3,7 +3,10 @@ const FOCUSSED_CLASSNAME = "vimmit-card__focussed";
 const isVisible = (element) => {
   if (!element) return false;
   const rect = element.getBoundingClientRect();
-  return rect.top >= 0 || rect.bottom <= window.innerHeight;
+  return (
+    (rect.top >= 0 && rect.bottom <= window.innerHeight) ||
+    (rect.top >= 0 && rect.bottom <= window.innerHeight)
+  );
 };
 
 const focusElement = (element) => {
@@ -63,12 +66,10 @@ const gotoNextPostOrComment = () => {
   if (posts.length === 0) return;
 
   const activeElement = getActiveElement();
-  if (activeElement) {
+  if (activeElement && isVisible(activeElement)) {
     const currentIndex = posts.indexOf(activeElement);
     if (currentIndex < posts.length - 1) {
       focusElement(posts[currentIndex + 1]);
-    } else {
-      console.log("reached end... what to do?");
     }
     return;
   }
@@ -81,7 +82,7 @@ const gotoPrevPostOrComment = () => {
   if (posts.length === 0) return;
 
   const activeElement = getActiveElement();
-  if (activeElement) {
+  if (activeElement && isVisible(activeElement)) {
     const currentIndex = posts.indexOf(activeElement);
     if (currentIndex > 0) {
       focusElement(posts[currentIndex - 1]);
