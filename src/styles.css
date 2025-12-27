@@ -1,0 +1,23 @@
+:root {
+  --vimmit-color-primary: #1da1f2;
+  --vimmit-card-focused-bg: rgba(29, 161, 242, 0.05);
+}
+
+html.theme-dark {
+  --vimmit-color-primary: #e1e8ed;
+  --vimmit-card-focused-bg: rgba(225, 232, 237, 0.05);
+}
+
+.vimmit-card__focussed {
+  outline: 2px solid var(--vimmit-color-primary) !important;
+  border-radius: 0.2rem;
+}
+
+article.vimmit-card__focussed {
+  background-color: var(--vimmit-card-focused-bg);
+  border-radius: 1rem;
+
+  shreddit-post {
+    background-color: var(--vimmit-card-focused-bg);
+  }
+}

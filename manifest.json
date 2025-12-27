@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Vimmit",
+  "version": "1.0.0",
+  "description": "Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 'k', upvote/downvote with 'u'/'d', and more.",
+  "homepage_url": "https://gitlab.com/abhayvashokan/vimmit",
+  "host_permissions": [
+    "*://*.reddit.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.reddit.com/*"
+      ],
+      "js": [
+        "src/index.js"
+      ],
+      "css": [
+        "src/styles.css"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "abhayvashokan@gmail.com",
+      "data_collection_permissions": {
+        "required": [
+          "websiteContent",
+          "websiteActivity"
+        ],
+        "optional": []
+      }
+    }
+  },
+  "icons": {
+    "48": "icons/border-48.png TODO: update this icon",
+    "96": "icons/border-96.png TODO: update this icon"
+  }
+}
