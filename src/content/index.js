@@ -22,6 +22,7 @@ const KEYBINDINGS = {
 };
 
 const keybindingsListener = (event) => {
+  event.stopImmediatePropagation();
   if (disableKeybindings()) return;
 
   try {
