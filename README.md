@@ -2,11 +2,6 @@
 
 Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 'k', upvote/downvote with 'u'/'d', and more.
 
-## Installation
-
-- [Chrome Web Store](https://x.com)
-- [Firefox Add-ons](https://x.com)
-
 ## Keybindings
 
 | Key     | Action                |
@@ -21,7 +16,7 @@ Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 
 | `h`     | Go to Home            |
 | `p`     | Go to Popular         |
 
-## Development
+## Installation/Development
 
 1.  Clone the repository:
     ```sh
@@ -36,12 +31,12 @@ Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 
     bun run watch
     ```
 4.  **Load in Chrome:**
-    *   Open Chrome and navigate to `chrome://extensions`.
-    *   Enable "Developer mode" (top right corner).
-    *   Click "Load unpacked" and select the `dist` directory.
+    - Open Chrome and navigate to `chrome://extensions`.
+    - Enable "Developer mode" (top right corner).
+    - Click "Load unpacked" and select the `dist` directory.
 5.  **Load in Firefox:**
-    *   Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
-    *   Click "Load Temporary Add-on" and select any file inside the `dist` directory (e.g., `dist/manifest.json`).
+    - Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
+    - Click "Load Temporary Add-on" and select any file inside the `dist` directory (e.g., `dist/manifest.json`).
 
 ## License
 
