@@ -22,7 +22,14 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "abhayvashokan@gmail.com"
+      "id": "abhayvashokan@gmail.com",
+      "data_collection_permissions": {
+        "required": [
+          "websiteContent",
+          "websiteActivity"
+        ],
+        "optional": []
+      }
     }
   },
   "icons": {
