@@ -2,6 +2,16 @@
 
 Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 'k', upvote/downvote with 'u'/'d', and more.
 
+## Features
+
+- Navigate between posts and comments using the keyboard.
+- Upvote, downvote, and comment without leaving the keyboard.
+- Seamlessly skips ads during navigation.
+
+Experience Vimmit in action:
+
+![Vimmit Demo](assets/recording.mov)
+
 ## Keybindings
 
 | Key     | Action                |
@@ -36,8 +46,4 @@ Vim-like keyboard navigation for Reddit. Browse posts and comments with 'j' and 
     - Click "Load unpacked" and select the `dist` directory.
 5.  **Load in Firefox:**
     - Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
-    - Click "Load Temporary Add-on" and select any file inside the `dist` directory (e.g., `dist/manifest.json`).
-
-## License
-
-This project is open source, feel free to use and modify it.
+    - Click "Load Temporary Add-on" and select the `manifest.json` file.
