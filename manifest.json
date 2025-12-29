@@ -26,8 +26,8 @@
     }
   },
   "icons": {
-    "48": "icons/border-48.png TODO: update this icon",
-    "96": "icons/border-96.png"
+    "48": "assets/logo-48.png",
+    "96": "assets/logo-96.png"
   },
   "action": {
     "default_popup": "src/popup/index.html",
