@@ -22,9 +22,10 @@ export const disableKeybindings = () => {
     return true;
   }
 
-  if (activeElement.contentEditable) return true;
+  if (activeElement.contentEditable === "true") return true;
 
   const tagName = activeElement.tagName.toLowerCase();
+
   return [
     "input",
     "textarea",

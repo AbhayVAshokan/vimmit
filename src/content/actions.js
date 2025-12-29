@@ -1,10 +1,10 @@
 import { getActiveElement, focusFirstVisibleElement } from "./dom";
 
 export const getVoteButton = (activeElement, voteType) => {
-  if (activeElement.tagName === "SHREDDIT-POST") {
-    return activeElement.children[0].shadowRoot.querySelector(
-      `button[${voteType}]`,
-    );
+  if (activeElement.tagName === "ARTICLE") {
+    return activeElement
+      .querySelector("shreddit-post")
+      .shadowRoot.querySelector(`button[${voteType}]`);
   } else if (activeElement.tagName === "SHREDDIT-COMMENT") {
     return activeElement
       .querySelector("shreddit-comment-action-row")
@@ -18,9 +18,7 @@ export const handleUpvote = () => {
   if (!activeElement) return;
 
   const upvoteBtn = getVoteButton(activeElement, "upvote");
-  if (upvoteBtn) {
-    upvoteBtn.click();
-  }
+  upvoteBtn.click();
 };
 
 export const handleDownvote = () => {
@@ -34,12 +32,18 @@ export const handleDownvote = () => {
 };
 
 export const addComment = () => {
+  let commentBtn;
   const activeElement = getActiveElement() || focusFirstVisibleElement();
 
   if (activeElement.tagName === "SHREDDIT-COMMENT") {
-    const commentBtn = activeElement.querySelector(
+    commentBtn = activeElement.querySelector(
       "shreddit-comment-action-row faceplate-tracker button",
     );
-    commentBtn?.click();
+  } else {
+    commentBtn = activeElement
+      .querySelector("shreddit-post")
+      .shadowRoot.querySelector("a[data-post-click-location]");
   }
+
+  commentBtn.click();
 };
