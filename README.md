@@ -12,6 +12,34 @@ Experience Vimmit in action:
 
 ![Vimmit Demo](assets/recording.mov)
 
+## Installation
+
+### Firefox
+
+Install the add-on from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/vimmit).
+
+### Chrome
+
+1. Clone the repository:
+
+   ```sh
+
+   git clone https://gitlab.com/abhayvashokan/vimmit.git
+
+   ```
+
+1. Install dependencies:
+   ```sh
+   bun install
+   ```
+1. Build the extension:
+   ```sh
+   bun run build
+   ```
+1. Open Chrome and navigate to `chrome://extensions`.
+1. Enable "Developer mode" (top right corner).
+1. Click "Load unpacked" and select the `manifest.json` file.
+
 ## Keybindings
 
 | Key     | Action                |
@@ -25,25 +53,3 @@ Experience Vimmit in action:
 | `n`     | New Post              |
 | `h`     | Go to Home            |
 | `p`     | Go to Popular         |
-
-## Installation/Development
-
-1.  Clone the repository:
-    ```sh
-    git clone https://gitlab.com/abhayvashokan/vimmit.git
-    ```
-2.  Install dependencies:
-    ```sh
-    bun install
-    ```
-3.  Build the extension:
-    ```sh
-    bun run watch
-    ```
-4.  **Load in Chrome:**
-    - Open Chrome and navigate to `chrome://extensions`.
-    - Enable "Developer mode" (top right corner).
-    - Click "Load unpacked" and select the `dist` directory.
-5.  **Load in Firefox:**
-    - Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
-    - Click "Load Temporary Add-on" and select the `manifest.json` file.
